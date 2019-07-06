@@ -15,4 +15,6 @@ targ <- levels(targ)
 current <- paste(version$major, version$minor, sep = ".")
 
 ## Write out to utilities directory
+## Write out two copies - one with version number for posterity
+write.table(targ, file = "installedPackages")
 write.table(targ, file = paste("installedPackages", current, sep="-"))

@@ -7,4 +7,12 @@
 z <- read.table("installedPackages")
 
 ## Collapse into a string
-zz <- paste(z$x, collapse = ", ")
+##zz <- paste(z$x, collapse = ", ")
+needToInstall <- function(x) {
+    
+    for(i in 1:length(x)){
+        is.element(x[i]), installed.packages()[,1]
+    }
+}
+        
+    

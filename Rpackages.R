@@ -13,3 +13,9 @@ targ <- levels(targ)
 
 ## Collapse into a string
 z <- paste(targ, collapse = ", ")
+
+## Get current R version
+current <- paste(version$major, version$minor, sep = ".")
+
+## Write out to utilities directory
+write.table(z, file = paste("installedPackages", current, sep="-"))

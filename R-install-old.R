@@ -7,4 +7,4 @@
 z <- read.table("installedPackages")
 
 ## Collapse into a string
-zz <- paste(z, collapse = ", ")
+zz <- paste(z$x, collapse = ", ")

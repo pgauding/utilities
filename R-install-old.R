@@ -8,11 +8,14 @@ z <- read.table("installedPackages")
 
 ## Collapse into a string
 ##zz <- paste(z$x, collapse = ", ")
-needToInstall <- function(x) {
-    
-    for(i in 1:length(x)){
-        is.element(x[i]), installed.packages()[,1]
-    }
+needToInstall <- function(z) {
+
+    tmp <- c()
+    tmp <- for(i in 1:length(z$x)){
+               tmp[i] <- is.element(z$x[i], installed.packages()[,1])
+               tmp
+           }
+    tmp
 }
         
     

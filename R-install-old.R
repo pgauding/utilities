@@ -11,10 +11,10 @@ z <- read.table("installedPackages")
 needToInstall <- function(z) {
 
     tmp <- c()
-    tmp <- for(i in 1:length(z$x)){
-               tmp[i] <- is.element(z$x[i], installed.packages()[,1])
-               tmp
-           }
+    for(i in 1:length(z$x)){
+        tmp[i] <- is.element(z$x[i], installed.packages()[,1])
+        tmp
+    }
     tmp
 }
         

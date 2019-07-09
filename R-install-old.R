@@ -15,4 +15,11 @@ needToInstall <- function(z) {
         tmp[i] <- is.element(z$x[i], installed.packages()[,1])
         tmp
     }
+
+    ## Extract the names needed
+    box <- cbind(levels(unlist(as.list(z))), tmp)
+    out <- box[,1][box[,2] == FALSE]
+
+    ## Install necessary packages
+    install.packages(dependencies = TRUE)
 }

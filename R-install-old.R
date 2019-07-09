@@ -3,13 +3,13 @@
 
 ## R packages reinstall packages from previous version of R
 
-## Import
-z <- read.table("installedPackages")
-
 ## Collapse into a string
 ##zz <- paste(z$x, collapse = ", ")
-needToInstall <- function(z) {
+needToInstall <- function() {
 
+    z <- "~/GIT/utilities/installedPackages"
+    z <- read.table(z)
+    
     tmp <- c()
     for(i in 1:length(z$x)) {
         tmp[i] <- is.element(z$x[i], installed.packages()[,1])
